@@ -6,7 +6,8 @@ fixture `Devexpress Testcafe testing application`
 
 test('Test Case1', async t =>{
     //here goes test cafe code
-    await t.typeText('#developer-name', 'Amani sabra')
+    await t.typeText('#developer-name', 'Amani')
     await t.click('#submit-button')
 
+    await t.expect(Selector('#article-header').innerText). contains('Amani')
 })
