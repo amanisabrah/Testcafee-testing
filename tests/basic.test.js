@@ -20,9 +20,12 @@ fixture `Devexpress Testcafe testing application`
 
 test('Test Case1', async t =>{
     //here goes test cafe code
-    await t.typeText('#developer-name', 'Amani')
-    await t.wait(3000)//wait for 3 sec
-    await t.click('#submit-button')
+    const inputName = Selector('#developer-name')
+    const submitButton = Selector('#submit-button')
+    const welcomeText = Selector('#article-header').innerText
 
-    await t.expect(Selector('#article-header').innerText). contains('Amani')
+    await t.typeText( inputName, 'Amani')
+   //await t.wait(3000)//wait for 3 sec
+    await t.click( submitButton)
+    await t.expect( welcomeText).contains('Amani')
 })
