@@ -21,6 +21,7 @@ fixture `Devexpress Testcafe testing application`
 test('Test Case1', async t =>{
     //here goes test cafe code
     await t.typeText('#developer-name', 'Amani')
+    await t.wait(3000)//wait for 3 sec
     await t.click('#submit-button')
 
     await t.expect(Selector('#article-header').innerText). contains('Amani')
