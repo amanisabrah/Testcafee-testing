@@ -8,6 +8,8 @@ fixture `Devexpress Testcafe testing application`
     })
     .beforeEach(async t => {
         //run befor each test 
+        await t.setTestSpeed(1)
+
     })
     .after(async t =>{
         //cleaning test data, Logging and sending data tp monitoring systems
@@ -18,7 +20,6 @@ fixture `Devexpress Testcafe testing application`
 
 test('Test Case1', async t =>{
     //here goes test cafe code
-    await t.setTestSpeed(0.01)
     await t.typeText('#developer-name', 'Amani')
     await t.click('#submit-button')
 
